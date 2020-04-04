@@ -1,0 +1,36 @@
+{
+  "name": "@devbit/datext",
+  "version": "0.1.0",
+  "description": "VIVES devbit database exercise toolbox",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts .",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "devbit-db": "./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sillevl/devbit-datext.git"
+  },
+  "keywords": [
+    "vives",
+    "devbit",
+    "databases"
+  ],
+  "author": "Sille Van Landschoot <info@sillevl.be>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sillevl/devbit-datext/issues"
+  },
+  "homepage": "https://github.com/sillevl/devbit-datext#readme",
+  "dependencies": {
+    "@types/node": "^13.11.0",
+    "typescript": "^3.8.3"
+  }
+}
