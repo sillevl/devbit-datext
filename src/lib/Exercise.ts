@@ -6,7 +6,7 @@ export default interface Exercise {
     description?: string;
     startDate?: Date;
     dueDate?: Date;
-    questions: Question[];
+    questions: any[];
 }
 
 
