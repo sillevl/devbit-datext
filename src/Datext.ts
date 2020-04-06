@@ -28,7 +28,13 @@ export default class Datext {
         this.options = args.options
         this.printWelcomeMessage()
         this.fileManager = new FileManager(this.files)
-        this.fileManager.files()?.then(x => console.log(x))
+        this.fileManager.files()?.then( contents => {
+            // const exercise = new ExerciseManager(contents)
+            const queryRunner = new QueryRunner()
+            contents.questions.forEach(question => {
+                queryRunner.run(question.answer)
+            });
+        })
     }
 
     private printWelcomeMessage(): void {

@@ -1,6 +1,7 @@
 
 import fs from 'fs'
 import path from 'path'
+import Exercise from './Exercise'
 
 export default class FileManager {
 
@@ -11,7 +12,7 @@ export default class FileManager {
         // this.files = this.processFiles(files)
     }
 
-    public files() {
+    public files(): Promise<Exercise> {
         return this.processFiles(this._files)
     }
 
@@ -27,7 +28,7 @@ export default class FileManager {
         })
     }
 
-    private processFiles(files: string[]){
+    private processFiles(files: string[]): Promise<Exercise> {
         return new Promise( (resolve, reject) => {
         if (files.length === 0) {
             const message = 'No exercise files to process'
